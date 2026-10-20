@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dis26d3h6wb5r"]
+
+[ext_resource type="PackedScene" uid="uid://73ola3qpe36a" path="res://src/scenes/Player.tscn" id="1_mmm3n"]
+[ext_resource type="Script" uid="uid://dvv4qnc7rr7rd" path="res://addons/MetroidvaniaSystem/Scripts/MetroidvaniaSystem.gd" id="1_wk23g"]
+[ext_resource type="PackedScene" uid="uid://dch8dyylb7526" path="res://addons/MetroidvaniaSystem/Template/Nodes/Minimap.tscn" id="2_7bdat"]
+
+[node name="Game" type="Node" unique_id=1971032388]
+script = ExtResource("1_wk23g")
+metadata/_custom_type_script = "uid://dvv4qnc7rr7rd"
+
+[node name="Player" parent="." unique_id=1615967199 instance=ExtResource("1_mmm3n")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=439527521]
+
+[node name="Minimap" parent="CanvasLayer" unique_id=243929788 instance=ExtResource("2_7bdat")]
+offset_right = 144.0

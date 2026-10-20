@@ -1,0 +1,40 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="SPUP"
+run/main_scene="uid://dis26d3h6wb5r"
+config/features=PackedStringArray("4.6", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+MetSys="*uid://c01ibpvrp2wsd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/MetroidvaniaSystem/EditorExtension/plugin.cfg", "res://addons/MetroidvaniaSystem/plugin.cfg")
+
+[layer_names]
+
+2d_render/layer_1="GROUND"
+2d_render/layer_2="PLAYER"
+2d_render/layer_3="FOREGROUND"
+2d_render/layer_4="BACKGROUND"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+rendering_device/driver.windows="d3d12"
