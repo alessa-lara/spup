@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const COYOTE_TIME: float = 0.5
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -1000.0
 
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -10,6 +10,8 @@ var animation: String = &"Idle"
 var prev_animation: String = &"Idle"
 
 var airtime: int = 0
+
+var reset_position: Vector2
 
 func _ready() -> void:
 	$AnimatedSprite.play(animation)
@@ -20,17 +22,17 @@ func _process(delta: float) -> void:
 
 # Physics
 func _physics_process(delta: float) -> void:
-	self.falling(delta)
 	self.jumping()
 	self.movement()
+	self.falling(delta)
+
 	move_and_slide()
 
 func jumping() -> void:
 	var on_floor = is_on_floor() or (airtime < COYOTE_TIME)
 	if Input.is_action_just_pressed("ui_select") and (on_floor):
 		self.velocity.y = JUMP_VELOCITY
-
-	if on_floor:
+	elif on_floor:
 		self.velocity.y = 0
 
 func falling(delta: float):
@@ -43,3 +45,7 @@ func movement():
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+func on_enter():
+	# Position for kill system.
+	self.reset_position = position

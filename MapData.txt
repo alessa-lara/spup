@@ -1,6 +1,6 @@
 [-4,-3,0]
--1,0,0,0|||
+-1,0,0,0|||src/scenes/levels/L0A0.tscn
 [-3,-3,0]
--1,0,-1,0|||
+-1,0,-1,0|||src/scenes/levels/L0A0.tscn
 [-2,-3,0]
-0,0,-1,0|||
+0,0,-1,0|||src/scenes/levels/L0A0.tscn
