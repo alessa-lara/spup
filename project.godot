@@ -29,6 +29,10 @@ enabled=PackedStringArray("res://addons/MetroidvaniaSystem/EditorExtension/plugi
 2d_render/layer_2="PLAYER"
 2d_render/layer_3="FOREGROUND"
 2d_render/layer_4="BACKGROUND"
+2d_physics/layer_1="GROUND"
+2d_physics/layer_2="PLAYER"
+2d_physics/layer_3="FOREGROUND"
+2d_physics/layer_4="BACKGROUND"
 
 [physics]
 
